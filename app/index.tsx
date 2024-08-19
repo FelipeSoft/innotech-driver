@@ -7,8 +7,13 @@ const Index = () => {
         <MainLayout>
             <View className="w-full flex items-center justify-center dark:bg-slate-950 bg-slate-100">
                 <Link href="/session-start" asChild>
-                    <Pressable className="py-2 px-4 text-xl rounded-md bg-blue-600">
-                        <Text className="dark:text-white text-black">Ir para a autenticação.</Text>
+                    <Pressable className="w-full py-2 px-4 text-xl rounded-md bg-white dark:bg-slate-900">
+                        <View className="w-full flex items-center justify-between">
+                            <View className="flex items-center">
+                                <Text>1234 5678 9101</Text>
+                            </View>
+                            <Text className="dark:text-white text-black">Ir para a autenticação.</Text>
+                        </View>
                     </Pressable>
                 </Link>
             </View>
