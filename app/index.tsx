@@ -9,7 +9,10 @@ const Index = () => {
         <>
             <MainLayout sectionTitle="Home">
                 <View className="w-full flex justify-center">
-                    <Link href="/session-start" asChild>
+                    <Link href={{
+                        pathname: "/trackings/[trackingId]",
+                        params: {id: "1"}
+                    }} asChild>
                         <Pressable className="w-full p-6 mt-6 text-xl rounded-lg bg-white shadow-xl shadow-slate-500 dark:bg-slate-900">
                             <View className="w-full flex justify-between">
                                 <View className="flex flex-row items-center justify-between">

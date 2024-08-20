@@ -10,7 +10,7 @@ type Props = {
 
 const variants = {
     executing: "text-emerald-700 dark:bg-emerald-700 bg-emerald-700/30 dark:text-white dark:bg-emerald-700/70",
-    stopped: "text-[#f00] dark:bg-yellow-600 bg-yellow-600/30 dark:text-white dark:bg-yellow-600/70",
+    stopped: "text-yellow-600 dark:bg-yellow-600 bg-yellow-600/30 dark:text-white dark:bg-yellow-600/70",
     finished: "text-blue-600 dark:bg-blue-600 bg-blue-600/30 dark:text-white dark:bg-blue-600/70",
     canceled: "text-red-500 dark:bg-red-600 bg-red-600/30 dark:text-white dark:bg-red-500/70"
 }
