@@ -28,7 +28,7 @@ export const MainLayout = ({ children, sectionTitle }: Props) => {
                     <Text className="font-light text-md text-white">{today}</Text>
                     <Text className="font-semibold text-2xl text-white">{sectionTitle}</Text>
                 </View>
-                <View className="px-6">{children}</View>
+                <View className="px-6 bg-slate-100 h-full dark:bg-slate-950">{children}</View>
                 <View className="px-10 flex flex-row items-center justify-between h-[80px] bg-blue-600 absolute bottom-0 w-full">
                     <TouchableHighlight>
                         <View className="flex flex-col items-center justify-center">
