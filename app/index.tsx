@@ -31,10 +31,10 @@ const Index = () => {
                     </Link>
                     <Text className="text-2xl font-semibold text-left mt-6">Últimas Entregas</Text>
                     <View className="flex flex-col w-full">
-                        <Tracking address="Endereço de Teste 1" code="0987 6543 2101" status="executing" />
-                        <Tracking address="Endereço de Teste 1" code="0987 6543 2101" status="canceled" />
-                        <Tracking address="Endereço de Teste 1" code="0987 6543 2101" status="stopped" />
-                        <Tracking address="Endereço de Teste 1" code="0987 6543 2101" status="finished" />
+                        <Tracking address="Endereço de Teste 1" code="1234" status="executing" />
+                        <Tracking address="Endereço de Teste 2" code="5678" status="canceled" />
+                        <Tracking address="Endereço de Teste 3" code="9210" status="stopped" />
+                        <Tracking address="Endereço de Teste 4" code="1112" status="finished" />
                     </View>
                 </View>
             </MainLayout>
