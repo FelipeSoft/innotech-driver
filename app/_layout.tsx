@@ -1,5 +1,6 @@
 import { Slot } from "expo-router";
 import "./globals.css";
+import { AuthenticationProvider } from "./context/authentication-context";
 
 declare module "react-native" {
   interface ViewProps {
@@ -10,4 +11,12 @@ declare module "react-native" {
   }
 }
 
-export default Slot;
+const RootLayout = () => {
+  return (
+    <AuthenticationProvider>
+      <Slot />
+    </AuthenticationProvider>
+  )
+}
+
+export default RootLayout;

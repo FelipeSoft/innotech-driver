@@ -1,6 +1,7 @@
 import { View, Text, TouchableHighlight } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useState, useEffect } from "react";
+import { Link } from "expo-router";
 
 type Props = {
     children: React.ReactNode;
@@ -30,11 +31,13 @@ export const MainLayout = ({ children, sectionTitle }: Props) => {
                 </View>
                 <View className="px-6 bg-slate-100 h-full dark:bg-slate-950">{children}</View>
                 <View className="px-10 flex flex-row items-center justify-between h-[80px] bg-blue-600 absolute bottom-0 w-full">
-                    <TouchableHighlight>
-                        <View className="flex flex-col items-center justify-center">
-                            <Ionicons name="home-outline" size={26} color="white" />
-                        </View>
-                    </TouchableHighlight>
+                    <Link href="/" asChild>
+                        <TouchableHighlight>
+                            <View className="flex flex-col items-center justify-center">
+                                <Ionicons name="home-outline" size={26} color="white" />
+                            </View>
+                        </TouchableHighlight>
+                    </Link>
                     <TouchableHighlight>
                         <View className="flex flex-col items-center justify-center">
                             <Ionicons name="map-outline" size={26} color="white" />
@@ -45,11 +48,13 @@ export const MainLayout = ({ children, sectionTitle }: Props) => {
                             <Ionicons name="cube-outline" size={26} color="white" />
                         </View>
                     </TouchableHighlight>
-                    <TouchableHighlight>
-                        <View className="flex flex-col items-center justify-center">
-                            <Ionicons name="settings-outline" size={26} color="white" />
-                        </View>
-                    </TouchableHighlight>
+                    <Link href="/session-start" asChild>
+                        <TouchableHighlight>
+                            <View className="flex flex-col items-center justify-center">
+                                <Ionicons name="settings-outline" size={26} color="white" />
+                            </View>
+                        </TouchableHighlight>
+                    </Link>
                 </View>
             </View>
         </>

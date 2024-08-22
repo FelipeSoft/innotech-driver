@@ -8,7 +8,7 @@ const trackingId = () => {
     const { trackingId } = useLocalSearchParams();
 
     useEffect(() => {
-        console.log(trackingId);
+        
     }, []);
 
     return (

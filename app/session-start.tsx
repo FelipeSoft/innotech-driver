@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Image, Text, TextInput, View } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "./components/button";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
+import { AuthenticationContext } from "./context/authentication-context";
 
 const SessionStartSchema = z.object({
     email: z.string().email({ message: 'E-mail inválido!' }),
@@ -22,8 +23,21 @@ const SessionStart: React.FC = () => {
         },
     });
 
+    const authenticationContext = useContext(AuthenticationContext);
+    const router = useRouter();
+    const [errorMessage, setErrorMessage] = useState("");
+
     const onSubmit = (data: SessionStartInputs) => {
-        console.log("Logged succcessfully!");
+        if (authenticationContext?.credentials) {
+            const correctEmail = authenticationContext.credentials.email;
+            const correctPassword = authenticationContext.credentials.password;
+            console.log(correctEmail);
+            if (correctEmail === data.email && correctPassword === data.password) {
+                router.push("/");
+                return;
+            }
+            setErrorMessage("E-mail e/ou senha incorretos. Tente novamente!");
+        }
     };
 
     return (
@@ -33,6 +47,11 @@ const SessionStart: React.FC = () => {
                     <Image source={require("../assets/images/only-logo.png")} className="w-[60px] h-[60px]" alt="InnoTech" />
                     <Text className="text-3xl font-semibold text-black dark:text-white">InnoTech Driver</Text>
                 </View>
+                {errorMessage !== "" && (
+                    <View className="py-2 px-4 bg-red-500/50 text-red-500 mb-4">
+                        <Text>{errorMessage}</Text>
+                    </View>
+                )}
                 <View className="flex flex-col gap-2">
                     <Controller
                         control={control}
