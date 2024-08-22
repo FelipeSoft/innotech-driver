@@ -1,4 +1,4 @@
-import { Slot } from "expo-router";
+  import { Slot } from "expo-router";
 import "./globals.css";
 import { AuthenticationProvider } from "./context/authentication-context";
 

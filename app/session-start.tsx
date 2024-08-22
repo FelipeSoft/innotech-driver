@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Image, Text, TextInput, View } from "react-native";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -51,8 +51,8 @@ const SessionStart: React.FC = () => {
                     <Text className="text-3xl font-semibold text-black dark:text-white">InnoTech Driver</Text>
                 </View>
                 {errorMessage !== "" && (
-                    <View className="py-2 px-4 bg-red-500/50 text-red-500 mb-4">
-                        <Text>{errorMessage}</Text>
+                    <View className="py-2 px-4 rounded-md bg-red-500/20 mb-4">
+                        <Text className="text-red-500">{errorMessage}</Text>
                     </View>
                 )}
                 <View className="flex flex-col gap-2">
@@ -96,7 +96,7 @@ const SessionStart: React.FC = () => {
                             </View>
                         )}
                     />
-                    <Link href="/" className="text-blue-600">Esqueceu a senha?</Link>
+                    <Link href="/session-start" className="text-blue-600">Esqueceu a senha?</Link>
                 </View>
                 <Button onPress={handleSubmit(onSubmit)} variant="blue">
                     Entrar

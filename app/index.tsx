@@ -3,6 +3,7 @@ import { Pressable, Text, View } from "react-native";
 import { MainLayout } from "./layouts/main-layout";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tracking } from "./components/tracking";
+import { useEffect } from "react";
 
 const Index = () => {
     return (
