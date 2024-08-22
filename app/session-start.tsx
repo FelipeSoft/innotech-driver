@@ -31,11 +31,14 @@ const SessionStart: React.FC = () => {
         if (authenticationContext?.credentials) {
             const correctEmail = authenticationContext.credentials.email;
             const correctPassword = authenticationContext.credentials.password;
-            console.log(correctEmail);
+
             if (correctEmail === data.email && correctPassword === data.password) {
+                authenticationContext.setConnected(true);
                 router.push("/");
                 return;
             }
+            
+            authenticationContext.setConnected(false);
             setErrorMessage("E-mail e/ou senha incorretos. Tente novamente!");
         }
     };
